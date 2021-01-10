@@ -19,7 +19,7 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  paths = getAllPosts().map((post) => ({
+  const paths = getAllPosts().map((post) => ({
     params: { slug: post.slug },
   }));
   return {
