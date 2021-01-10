@@ -1,13 +1,14 @@
 import { getPostBySlug, getAllPosts } from "@api";
+import Post from "@components/Post";
 
-export default function Post(props) {
+export default function PostPage({ title, date, content, description }) {
   return (
-    <div>
-      <h2>{props.title}</h2>
-      <caption>{props.description}</caption>
-      <p>{props.published}</p>{" "}
-      <div dangerouslySetInnerHTML={{ __html: props.content }} />
-    </div>
+    <Post
+      title={title}
+      date={date}
+      content={content}
+      description={description}
+    />
   );
 }
 
@@ -18,8 +19,7 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  let paths = getAllPosts();
-  paths = paths.map((post) => ({
+  paths = getAllPosts().map((post) => ({
     params: { slug: post.slug },
   }));
   return {
