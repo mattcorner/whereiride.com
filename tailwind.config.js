@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     colors: {
       brand: colors.yellow[500],
-      gray: colors.coolGray,
+      gray: colors.gray,
       twitter: "#1DA1F2",
       strava: "#fc4c02",
       komoot: "#9cde4e",
