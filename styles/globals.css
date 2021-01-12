@@ -9,4 +9,13 @@
 }
 
 @layer components {
+  .prose ul > li.task-list-item {
+    @apply list-none px-0;
+  }
+  .prose ul > li::before {
+    display: none;
+  }
+  .prose ul > li.task-list-item input {
+    @apply mr-2 my-0;
+  }
 }

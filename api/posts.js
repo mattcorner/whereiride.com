@@ -1,4 +1,3 @@
-import marked from "marked";
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
@@ -10,23 +9,12 @@ export function getAllPosts() {
   const posts = filenames.map((filename) => {
     const fullPath = join(postsDirectory, filename);
     const fileContents = fs.readFileSync(fullPath, "utf8");
-    const meta = matter(fileContents);
+    const { data, content } = matter(fileContents);
     return {
       slug: filename.replace(".md", ""),
-      ...meta.data,
+      ...data,
+      content,
     };
   });
   return posts;
-}
-
-export function getPostBySlug(slug) {
-  const fullPath = join(postsDirectory, `${slug}.md`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-  const meta = matter(fileContents);
-  const content = marked(meta.content);
-  return {
-    slug,
-    ...meta.data,
-    content,
-  };
 }

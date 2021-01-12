@@ -1,20 +1,22 @@
-import { getPostBySlug, getAllPosts } from "@api";
+import { getAllPosts } from "@api";
 import Post from "@components/Post";
 
-export default function PostPage({ title, date, content, description }) {
+export default function PostPage(post) {
   return (
     <Post
-      title={title}
-      date={date}
-      content={content}
-      description={description}
+      title={post.title}
+      date={post.date}
+      content={post.content}
+      description={post.description}
     />
   );
 }
 
 export async function getStaticProps(context) {
+  const posts = getAllPosts();
+  const index = posts.findIndex((post) => post.slug === context.params.slug);
   return {
-    props: getPostBySlug(context.params.slug),
+    props: posts[index],
   };
 }
 

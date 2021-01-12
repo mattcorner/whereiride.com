@@ -13,10 +13,49 @@ module.exports = {
     fontFamily: {
       serif: ["Noto Serif", "serif"],
     },
-    extend: {},
+    extend: {
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme("colors.gray.700"),
+            a: {
+              "text-decoration": "none",
+              "border-bottom": `2px solid ${theme("colors.brand")}`,
+              "&:hover": {
+                color: theme("colors.brand"),
+              },
+            },
+            h1: {
+              color: theme("colors.gray.700"),
+            },
+            h2: {
+              color: theme("colors.gray.700"),
+            },
+            h3: {
+              color: theme("colors.gray.700"),
+            },
+            h4: {
+              color: theme("colors.gray.700"),
+            },
+            h5: {
+              color: theme("colors.gray.700"),
+            },
+            h6: {
+              color: theme("colors.gray.700"),
+            },
+            strong: {
+              color: theme("colors.gray.700"),
+            },
+            thead: {
+              color: theme("colors.gray.700"),
+            },
+          },
+        },
+      }),
+    },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
