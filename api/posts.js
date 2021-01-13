@@ -1,7 +1,7 @@
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
-var parseISO = require("date-fns/parseISO");
+import parseISO from "date-fns/parseISO";
 
 const postsDirectory = join(process.cwd(), "_posts");
 
