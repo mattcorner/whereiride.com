@@ -32,7 +32,9 @@ export default function Bio() {
           >
             Komoot
           </a>
-          . You can also check out{" "}
+          .
+          {/**
+          You can also check out{" "}
           <Link href="/">
             <a className="border-brand border-b-2 hover:text-brand">my setup</a>
           </Link>{" "}
@@ -41,6 +43,7 @@ export default function Bio() {
             <a className="border-brand border-b-2 hover:text-brand">to ride</a>
           </Link>
           .
+          **/}
         </p>
       </div>
     </div>
