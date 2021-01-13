@@ -13,9 +13,6 @@ export default function Post({ title, date, content }) {
     .processSync(content).result;
   return (
     <article>
-      <Link href="/">
-        <h3 className="text-2xl font-bold cursor-pointer">Where I Ride</h3>
-      </Link>
       <h2 className="text-3xl font-bold mt-6">{title}</h2>
       <p className="mt-3">
         Published <strong>{format(parseISO(date), "MMMM Mo, uu")}</strong> (

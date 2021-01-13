@@ -1,14 +1,22 @@
 import { getAllPosts } from "@api";
 import Post from "@components/Post";
+import Link from "next/link";
 
 export default function PostPage(post) {
   return (
-    <Post
-      title={post.title}
-      date={post.date}
-      content={post.content}
-      description={post.description}
-    />
+    <>
+      <Link href="/">
+        <h3 className="text-2xl font-bold cursor-pointer border-brand border-b-2 hover:text-brand inline">
+          Where I Ride
+        </h3>
+      </Link>
+      <Post
+        title={post.title}
+        date={post.date}
+        content={post.content}
+        description={post.description}
+      />
+    </>
   );
 }
 
