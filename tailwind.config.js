@@ -43,6 +43,9 @@ module.exports = {
             h6: {
               color: theme("colors.gray.700"),
             },
+            p: {
+              fontSize: theme("fontSize.lg"),
+            },
             strong: {
               color: theme("colors.gray.700"),
             },

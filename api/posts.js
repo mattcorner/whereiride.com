@@ -1,6 +1,7 @@
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
+var parseISO = require("date-fns/parseISO");
 
 const postsDirectory = join(process.cwd(), "_posts");
 
@@ -16,5 +17,5 @@ export function getAllPosts() {
       content,
     };
   });
-  return posts;
+  return posts.sort((a, b) => parseISO(b.date) - parseISO(a.date));
 }

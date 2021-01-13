@@ -19,6 +19,7 @@ export default function Home({ posts }) {
                   {post.title}
                 </a>
               </Link>
+              {post.draft && <span className="text-sm ml-2">(draft)</span>}
             </h2>
             <p className="italic md:text-lg">{post.description}</p>
           </article>

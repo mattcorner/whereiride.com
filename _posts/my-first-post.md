@@ -1,7 +1,7 @@
 ---
 title: My first post
 description: Read me!
-date: 07/01/2021
+date: "2021-01-01"
 draft: true
 ---
 
