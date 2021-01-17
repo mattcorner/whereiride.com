@@ -1,8 +1,16 @@
 import { getAllPosts } from "@api";
 import Post from "@components/Post";
+import PostNavigation from "@components/PostNavigation";
 import Link from "next/link";
 
-export default function PostPage(post) {
+export default function PostPage({
+  title,
+  date,
+  content,
+  description,
+  next,
+  previous,
+}) {
   return (
     <>
       <Link href="/">
@@ -11,11 +19,12 @@ export default function PostPage(post) {
         </h3>
       </Link>
       <Post
-        title={post.title}
-        date={post.date}
-        content={post.content}
-        description={post.description}
+        title={title}
+        date={date}
+        content={content}
+        description={description}
       />
+      <PostNavigation next={next} previous={previous} />
     </>
   );
 }
@@ -23,8 +32,10 @@ export default function PostPage(post) {
 export async function getStaticProps(context) {
   const posts = getAllPosts();
   const index = posts.findIndex((post) => post.slug === context.params.slug);
+  const previous = posts[index + 1] ?? null;
+  const next = posts[index - 1] ?? null;
   return {
-    props: posts[index],
+    props: { ...posts[index], next, previous },
   };
 }
 
