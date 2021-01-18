@@ -49,9 +49,9 @@ function LeftChevron(props) {
       viewBox="0 0 24 24"
       fill="none"
       stroke="#999"
-      stroke-width="1"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       {...props}
     >
       <polyline points="15 18 9 12 15 6"></polyline>
@@ -67,9 +67,9 @@ function RightChevron(props) {
       viewBox="0 0 24 24"
       fill="none"
       stroke="#999"
-      stroke-width="1"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       {...props}
     >
       <polyline points="9 18 15 12 9 6"></polyline>
