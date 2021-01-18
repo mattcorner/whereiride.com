@@ -30,9 +30,7 @@ export default function Home({ posts }) {
 }
 
 export async function getStaticProps() {
-  const posts = getAllPosts().filter(
-    (post) => !post.draft || process.env.NODE_ENV === "development"
-  );
+  const posts = getAllPosts();
   return {
     props: {
       posts,

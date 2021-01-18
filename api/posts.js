@@ -17,5 +17,7 @@ export function getAllPosts() {
       content,
     };
   });
-  return posts.sort((a, b) => parseISO(b.date) - parseISO(a.date));
+  return posts
+    .filter((post) => !post.draft || process.env.NODE_ENV === "development")
+    .sort((a, b) => parseISO(b.date) - parseISO(a.date));
 }
