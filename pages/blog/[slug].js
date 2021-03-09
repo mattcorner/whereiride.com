@@ -2,6 +2,7 @@ import { getAllPosts } from "@api";
 import Post from "@components/Post";
 import PostNavigation from "@components/PostNavigation";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function PostPage({
   title,
@@ -13,6 +14,9 @@ export default function PostPage({
 }) {
   return (
     <>
+      <Head>
+        <title>{title} | WhereIRide</title>
+      </Head>
       <Link href="/">
         <h3 className="text-2xl font-bold cursor-pointer border-brand border-b-2 hover:text-brand inline">
           Where I Ride

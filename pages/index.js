@@ -1,10 +1,14 @@
 import { getAllPosts } from "@api";
 import Link from "next/link";
 import Bio from "@components/Bio";
+import Head from "next/head";
 
 export default function Home({ posts }) {
   return (
     <>
+      <Head>
+        <title>WhereIRide</title>
+      </Head>
       <h1 className="mb-8 text-3xl font-semibold md:text-5xl">Where I Ride</h1>
       <Bio />
       <section>
