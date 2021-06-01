@@ -9,7 +9,7 @@
   "author": "Matthew Corner",
   "license": "ISC",
   "dependencies": {
-    "@tailwindcss/typography": "^0.3.1",
+    "@tailwindcss/typography": "^0.4.1",
     "autoprefixer": "^10.2.5",
     "date-fns": "^2.16.1",
     "fontsource-noto-serif": "^4.0.0",
